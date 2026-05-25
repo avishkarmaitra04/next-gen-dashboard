@@ -1,78 +1,129 @@
 # Next Gen Dashboard
 
-A modern animated dashboard built using Next.js, Tailwind CSS, Framer Motion, and Supabase.
+A modern animated learning dashboard built with Next.js, Supabase, Tailwind CSS, and Framer Motion.
+
+---
 
 ## Features
 
-- Left Sidebar Navigation
-- Bento Grid Dashboard Layout
-- Animated Course Cards
-- Framer Motion Animations
-- Supabase Database Integration
-- Server-side Data Fetching
-- Responsive Design
-- Weekly Activity Analytics
-- Dynamic Course Rendering
+- Responsive dashboard layout
+- Bento grid UI design
+- Animated course cards
+- Smooth Framer Motion animations
+- Supabase database integration
+- Server-side data fetching
+- Modern dark-themed interface
+- Search bar and activity widgets
+
+---
 
 ## Tech Stack
 
-- Next.js 15
-- React
+- Next.js 16
 - TypeScript
 - Tailwind CSS
 - Framer Motion
 - Supabase
+- Vercel
 
-## Architecture
-
-The application uses the Next.js App Router architecture.
-
-### Server Components
-
-The main dashboard page (`app/page.tsx`) is implemented as a server component to fetch course data directly from Supabase using async server-side rendering.
-
-### Client Components
-
-Interactive UI components such as:
-- Course Cards
-- Activity Tile
-- Sidebar
-- Search Bar
-- Animations
-
-are implemented as client components using `"use client"`.
-
-## Database
-
-Supabase is used as the backend database for storing course information dynamically.
-
-## Challenges Faced
-
-- Configuring Supabase environment variables correctly
-- Managing server/client component separation
-- Implementing responsive Bento grid layouts
-- Creating reusable animated components
-- Fetching dynamic data securely
+---
 
 ## Environment Variables
 
 Create a `.env.local` file using the values from `.env.example`.
 
-## Run Locally
+Required variables:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/avishkarmaitra04/next-gen-dashboard
+```
+
+Install dependencies:
 
 ```bash
 npm install
+```
+
+Run the development server:
+
+```bash
 npm run dev
 ```
 
+Open:
+
+```txt
+http://localhost:3000
+```
+
+---
+
+## Architecture Choices
+
+### Server / Client Component Split
+
+- `app/page.tsx` is a Server Component.
+- Supabase data fetching is handled server-side.
+- Interactive UI elements and animations are handled using Client Components.
+
+### Why This Architecture?
+
+- Faster initial rendering
+- Better SEO performance
+- Reduced client-side API requests
+- Cleaner separation of logic and UI
+
+---
+
+## Challenges Faced
+
+### Supabase Integration
+
+Faced issues with:
+- incorrect API URL
+- environment variable setup
+- invalid REST endpoint paths
+
+These were resolved by configuring Supabase correctly and creating a reusable client in `lib/supabase.ts`.
+
+### TypeScript Deployment Errors
+
+Vercel deployment initially failed due to mismatched component props.
+
+Resolved by updating TypeScript prop definitions to match Supabase response data.
+
+### Deployment Configuration
+
+Handled:
+- Vercel environment variables
+- GitHub integration
+- production build debugging
+
+---
+
 ## Deployment
 
-The project is deployed using Vercel.
+### Live Demo
 
-## Live Demo
+https://next-gen-dashboard-git-main-avishkar-projects.vercel.app
 
-
-
-## GitHub Repository
+### GitHub Repository
 
 https://github.com/avishkarmaitra04/next-gen-dashboard
+
+---
+
+## Author
+
+Avishkar Maitra
