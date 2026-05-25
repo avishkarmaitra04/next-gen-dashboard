@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next Gen Dashboard
 
-## Getting Started
+A modern animated dashboard built using Next.js, Tailwind CSS, Framer Motion, and Supabase.
 
-First, run the development server:
+## Features
+
+- Left Sidebar Navigation
+- Bento Grid Dashboard Layout
+- Animated Course Cards
+- Framer Motion Animations
+- Supabase Database Integration
+- Server-side Data Fetching
+- Responsive Design
+- Weekly Activity Analytics
+- Dynamic Course Rendering
+
+## Tech Stack
+
+- Next.js 15
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Supabase
+
+## Architecture
+
+The application uses the Next.js App Router architecture.
+
+### Server Components
+
+The main dashboard page (`app/page.tsx`) is implemented as a server component to fetch course data directly from Supabase using async server-side rendering.
+
+### Client Components
+
+Interactive UI components such as:
+- Course Cards
+- Activity Tile
+- Sidebar
+- Search Bar
+- Animations
+
+are implemented as client components using `"use client"`.
+
+## Database
+
+Supabase is used as the backend database for storing course information dynamically.
+
+## Challenges Faced
+
+- Configuring Supabase environment variables correctly
+- Managing server/client component separation
+- Implementing responsive Bento grid layouts
+- Creating reusable animated components
+- Fetching dynamic data securely
+
+## Environment Variables
+
+Create a `.env.local` file using the values from `.env.example`.
+
+## Run Locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deployment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The project is deployed using Vercel.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Live Demo
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## GitHub Repository
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+https://github.com/avishkarmaitra04/next-gen-dashboard
