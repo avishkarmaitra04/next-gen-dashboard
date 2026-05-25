@@ -5,11 +5,13 @@ import { motion } from "framer-motion";
 type Props = {
   title: string;
   progress: number;
+  iconName: string;
 };
 
 export default function CourseCard({
   title,
   progress,
+  iconName,
 }: Props) {
   return (
     <motion.article
@@ -56,7 +58,7 @@ export default function CourseCard({
           </h2>
 
           <div className="text-2xl">
-            📘
+            {iconName}
           </div>
         </div>
 
