@@ -8,6 +8,7 @@ type Props = {
   iconName: string;
 };
 
+
 export default function CourseCard({
   title,
   progress,
