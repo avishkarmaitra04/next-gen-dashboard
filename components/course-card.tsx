@@ -44,7 +44,7 @@ export default function CourseCard({
         className="
           absolute
           inset-0
-          bg-gradient-to-br
+          bg-linear-to-br
           from-cyan-500/5
           to-purple-500/5
         "
