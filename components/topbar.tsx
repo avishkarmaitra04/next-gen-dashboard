@@ -1,17 +1,30 @@
 "use client";
 
-import { Bell, Search } from "lucide-react";
+import { Bell, Search, LogOut } from "lucide-react";
+import { supabase } from "../lib/supabase";
+import { useRouter } from "next/navigation";
 
 export default function Topbar() {
+  const router = useRouter();
+
+  async function handleLogout() {
+    await supabase.auth.signOut();
+    router.push("/login");
+  }
+
   return (
     <header
-      className="
-        flex
-        items-center
-        justify-between
-        mb-6
-      "
+    className="
+    flex
+    flex-col
+    sm:flex-row
+    items-center
+    justify-between
+    gap-4
+    mb-6
+    "
     >
+      {/* Search Bar */}
       <div
         className="
           flex
@@ -23,7 +36,7 @@ export default function Topbar() {
           px-4
           py-3
           w-full
-          max-w-md
+          sm:max-w-md
         "
       >
         <Search className="w-5 h-5 text-zinc-400" />
@@ -39,19 +52,42 @@ export default function Topbar() {
         />
       </div>
 
-      <button
-        className="
-          ml-4
-          bg-zinc-900
-          border border-zinc-800
-          p-3
-          rounded-2xl
-          hover:border-cyan-500/40
-          transition-all
-        "
-      >
-        <Bell className="w-5 h-5" />
-      </button>
+      {/* Right Side Buttons */}
+      <div className="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-normal">
+        {/* Notification */}
+        <button
+          className="
+            bg-zinc-900
+            border border-zinc-800
+            p-3
+            rounded-2xl
+            hover:border-cyan-500/40
+            transition-all
+          "
+        >
+          <Bell className="w-5 h-5" />
+        </button>
+
+        {/* Logout */}
+        <button
+          onClick={handleLogout}
+          className="
+            bg-red-500
+            hover:bg-red-400
+            transition-all
+            px-4
+            py-3
+            rounded-2xl
+            font-semibold
+            flex
+            items-center
+            gap-2
+          "
+        >
+          <LogOut className="w-4 h-4" />
+          Logout
+        </button>
+      </div>
     </header>
   );
 }

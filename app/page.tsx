@@ -20,10 +20,10 @@ export default async function Home() {
     }
 
   return (
-    <main className="min-h-screen bg-black text-white flex">
+    <main className="min-h-screen bg-black text-white flex flex-col md:flex-row">
       <Sidebar />
 
-      <section className="flex-1 p-6">
+      <section className="flex-1 p-4 md:p-6">
       <Topbar />
         <div
           className="

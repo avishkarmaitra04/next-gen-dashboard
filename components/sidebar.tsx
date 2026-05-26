@@ -1,6 +1,13 @@
 export default function Sidebar() {
     return (
-      <aside className="w-64 bg-zinc-900 border-r border-zinc-800 p-4">
+      <aside className="
+      w-full
+      md:w-64
+      border-r
+      border-zinc-800
+      bg-zinc-950
+      p-6
+      ">
         <h2 className="text-2xl font-bold text-white">
           Dashboard
         </h2>
