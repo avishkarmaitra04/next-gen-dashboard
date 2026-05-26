@@ -15,6 +15,7 @@ export default function ActivityTile() {
         damping: 20,
       }}
       className="
+        col-span-1
         bg-zinc-900
         border border-zinc-800
         rounded-3xl
@@ -25,7 +26,7 @@ export default function ActivityTile() {
         Weekly Activity
       </h2>
 
-      <div className="mt-6 flex items-end gap-3 h-40">
+      <div className="mt-6 flex items-end gap-2 h-40">
         {bars.map((height, i) => (
           <motion.div
             key={i}

@@ -116,7 +116,7 @@ Handled:
 
 ### Live Demo
 
-https://next-gen-dashboard-git-main-avishkar-projects.vercel.app
+https://next-gen-dashboard-git-mobile-final-deploy-avishkar-projects.vercel.app/
 
 ### GitHub Repository
 
